@@ -14,10 +14,7 @@ public class RedisDemo {
     private static boolean execute = true;
 
     public static void main(String[] args) {
-//        Thread tast1 = new Thread(new TaskThread1());
-//        Thread task2 = new Thread(new TaskThread2());
-//        tast1.start();
-//        task2.start();
+        scheduledTask();
     }
 
     private static void scheduledTask() {
@@ -85,32 +82,7 @@ public class RedisDemo {
     }
 
     private static void uploadDataCsv(String csvFile) {
-
-    }
-
-}
-
-
-class TaskThread1 implements Runnable {
-
-    Jedis jedis = new Jedis("localhost");
-
-    public void run() {
-        while (true) {
-            Long counter = jedis.incr("counter");
-            System.out.println("task1: " + counter);
-        }
+        //todo: use google api, oAuth2 first
     }
 }
 
-class TaskThread2 implements Runnable {
-
-    Jedis jedis = new Jedis("localhost");
-
-    public void run() {
-        while (true) {
-            Long counter = jedis.incr("counter");
-            System.out.println("task2: " + counter);
-        }
-    }
-}
